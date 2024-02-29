@@ -2,17 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get(uri: '/', action: 'EnderecoController@index')->name( 'nome');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(uri: '/adicionar', action: 'EnderecoController@adicionar')->name( 'adicionar');
+
+Route::get(uri: '/buscar', action: 'EnderecoController@buscar')->name(name: 'buscar');
+
+Route::post(uri: '/salvar', action: 'EnderecoController@buscar')->name(name: 'salvar');
